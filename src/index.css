@@ -54,6 +54,10 @@ All colors MUST be HSL.
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
+    
+    /* Banana animation */
+    --banana-fall-duration: 8s;
+    --banana-fall-delay: 2s;
 
     --sidebar-background: 0 0% 98%;
 
