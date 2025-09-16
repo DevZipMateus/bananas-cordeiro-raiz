@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   useEffect(() => {
@@ -10,29 +9,30 @@ const Hero = () => {
     // Limpa bananas existentes
     container.innerHTML = '';
     
-    const numeroDeBananas = 25; // Número de bananas caindo
+    const numeroDeBananas = 25;
+    const gifBananaURL = 'https://i.imgur.com/E5C6y0O.gif';
 
     for (let i = 0; i < numeroDeBananas; i++) {
-      // Cria um novo elemento div para a banana
-      const banana = document.createElement('div');
-      banana.className = 'absolute text-2xl md:text-3xl select-none z-0 animate-banana-fall';
-      banana.innerHTML = '🍌';
+      // Cria um novo elemento img para a banana GIF
+      const banana = document.createElement('img');
+      banana.className = 'absolute select-none z-0 animate-banana-fall-gif';
+      banana.src = gifBananaURL;
+      banana.alt = 'Banana Pixel Caindo';
+      banana.style.imageRendering = 'pixelated';
 
       // Randomiza a posição horizontal
-      banana.style.left = Math.random() * 95 + '%';
+      banana.style.left = Math.random() * 98 + 'vw';
 
       // Randomiza o tamanho da banana
-      const size = Math.random() * 1.5 + 1;
-      banana.style.fontSize = size + 'rem';
+      const randomSize = Math.random() * 30 + 40; // Entre 40px e 70px
+      banana.style.width = randomSize + 'px';
+      banana.style.height = 'auto';
 
       // Randomiza a duração da animação (velocidade de queda)
-      banana.style.animationDuration = (Math.random() * 6 + 8) + 's'; // Entre 8s e 14s
+      banana.style.animationDuration = (Math.random() * 4 + 6) + 's'; // Entre 6s e 10s
 
       // Randomiza o atraso para o início da animação
-      banana.style.animationDelay = Math.random() * 10 + 's';
-
-      // Adiciona opacidade variada
-      banana.style.opacity = (Math.random() * 0.4 + 0.3).toString(); // Entre 0.3 e 0.7
+      banana.style.animationDelay = Math.random() * 8 + 's';
 
       // Adiciona a banana ao container
       container.appendChild(banana);
@@ -48,8 +48,11 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient from sky blue to deeper blue */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-300 via-blue-400 to-blue-600" />
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://i.imgur.com/5O88n9o.jpeg')" }}
+      />
       
       {/* Banana container for falling bananas */}
       <div id="banana-container" className="absolute inset-0 pointer-events-none"></div>
@@ -57,7 +60,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white animate-fade-in-up">
         {/* Hero content with semi-transparent background */}
-        <div className="bg-black/40 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto">
+        <div className="bg-black/70 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto border border-white/20">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-shadow-lg">
             Bananas Cordeiro
           </h1>
