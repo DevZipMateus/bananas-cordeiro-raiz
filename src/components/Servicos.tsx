@@ -96,13 +96,13 @@ const Servicos = () => {
 
             <div>
               <video 
-                src="/galeria/produzindo_o_melhor_pra_sua_familia_.mp4"
+                src="/galeria/midia_6.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
                 className="rounded-lg shadow-lg w-full h-[400px] object-cover"
-                aria-label="Vídeo produzindo o melhor para sua família"
+                aria-label="Vídeo sobre nossos serviços"
               >
                 Seu navegador não suporta a reprodução de vídeo.
               </video>
