@@ -2,38 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Banana GIF Animation Styles */
-.banana-gif {
-  position: absolute;
-  top: -15%;
-  user-select: none;
-  z-index: 2;
-  width: 50px;
-  height: auto;
-  image-rendering: pixelated;
-  
-  animation-name: fall-gif;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes fall-gif {
-  0% {
-    transform: translateY(0) rotate(-10deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(115vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -86,6 +54,10 @@ All colors MUST be HSL.
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
+    
+    /* Banana animation */
+    --banana-fall-duration: 8s;
+    --banana-fall-delay: 2s;
 
     --sidebar-background: 0 0% 98%;
 
