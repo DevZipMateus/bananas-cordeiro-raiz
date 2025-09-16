@@ -84,21 +84,15 @@ export default {
             height: "0",
           },
         },
-        "banana-gif-fall": {
+        "banana-fall": {
           "0%": {
-            transform: "translateY(0) rotate(-20deg)",
-            opacity: "0"
-          },
-          "10%": {
-            opacity: "1"
-          },
-          "90%": {
-            opacity: "1"
+            transform: "translateY(-100px) rotate(0deg)",
+            opacity: "1",
           },
           "100%": {
-            transform: "translateY(115vh) rotate(720deg)",
-            opacity: "0"
-          }
+            transform: "translateY(calc(100vh + 100px)) rotate(720deg)",
+            opacity: "0",
+          },
         },
         "fade-in-up": {
           "0%": {
@@ -114,7 +108,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "banana-gif-fall": "banana-gif-fall linear infinite",
+        "banana-fall": "banana-fall linear infinite",
         "fade-in-up": "fade-in-up 0.6s ease-out",
       },
     },
