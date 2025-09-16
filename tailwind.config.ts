@@ -86,12 +86,12 @@ export default {
         },
         "banana-fall": {
           "0%": {
-            transform: "translateY(-100px) rotate(0deg)",
+            transform: "translateY(-100px) rotateZ(0deg)",
             opacity: "1",
           },
           "100%": {
-            transform: "translateY(calc(100vh + 100px)) rotate(720deg)",
-            opacity: "0",
+            transform: "translateY(calc(100vh + 100px)) rotateZ(360deg)",
+            opacity: "0.5",
           },
         },
         "fade-in-up": {
