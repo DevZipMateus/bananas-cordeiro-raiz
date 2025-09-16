@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -6,8 +7,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Autoplay from "embla-carousel-autoplay";
 
 const Galeria = () => {
+  const [selectedImage, setSelectedImage] = useState<{src: string, alt: string, title: string} | null>(null);
   const images = [
     {
       src: "/galeria/familia.jpg",
@@ -49,14 +57,24 @@ const Galeria = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Carousel className="w-full">
+          <Carousel 
+            className="w-full"
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              }),
+            ]}
+          >
             <CarouselContent>
               {images.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                       <CardContent className="p-0">
-                        <div className="aspect-video relative group">
+                        <div 
+                          className="aspect-video relative group cursor-pointer"
+                          onClick={() => setSelectedImage(image)}
+                        >
                           <img
                             src={image.src}
                             alt={image.alt}
@@ -79,6 +97,26 @@ const Galeria = () => {
             <CarouselNext className="bg-background/80 hover:bg-background border-border" />
           </Carousel>
         </div>
+
+        {/* Modal para imagem expandida */}
+        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+          <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
+            {selectedImage && (
+              <div className="relative">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                  <h3 className="text-xl font-semibold text-center">
+                    {selectedImage.title}
+                  </h3>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
