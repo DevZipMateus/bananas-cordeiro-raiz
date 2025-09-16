@@ -1,18 +1,52 @@
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import { useEffect } from "react";
 
 const Hero = () => {
+  useEffect(() => {
+    const container = document.getElementById('banana-gif-container');
+    if (!container) return;
+
+    const gifBananaURL = 'https://i.ibb.co/hK5X37M/pixel-banana.gif';
+    const numeroDeBananas = 25;
+
+    for (let i = 0; i < numeroDeBananas; i++) {
+      const banana = document.createElement('img');
+      banana.classList.add('banana-gif');
+      banana.src = gifBananaURL;
+      banana.alt = 'Banana Pixel Caindo';
+
+      banana.style.left = Math.random() * 98 + 'vw';
+      const randomSize = Math.random() * 30 + 40;
+      banana.style.width = randomSize + 'px';
+      banana.style.height = 'auto';
+
+      banana.style.animationDuration = Math.random() * 4 + 6 + 's';
+      banana.style.animationDelay = Math.random() * 8 + 's';
+
+      container.appendChild(banana);
+    }
+
+    return () => {
+      if (container) {
+        container.innerHTML = '';
+      }
+    };
+  }, []);
+
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-primary/70" />
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
+    <section 
+      id="inicio" 
+      className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden text-white"
+      style={{
+        backgroundImage: 'url(https://i.ibb.co/k2L3x2F/3c118e7a0233a77b57c79d96f8fb6c22.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div id="banana-gif-container"></div>
+
+      <div className="hero-content relative z-[3] bg-black/50 p-10 rounded-2xl border border-white/20">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           Bananas Cordeiro
         </h1>
