@@ -1,4 +1,4 @@
-import bananasImage from "@/assets/bananas-fresh.jpg";
+// Componente removido já que agora usaremos vídeo
 
 const Historia = () => {
   return (
@@ -57,11 +57,17 @@ const Historia = () => {
             </div>
 
             <div className="space-y-6">
-              <img 
-                src={bananasImage} 
-                alt="Bananas frescas da Bananas Cordeiro"
+              <video 
+                src="/galeria/da_nossa_familia_pra_sua_familia_.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="rounded-lg shadow-lg w-full h-[400px] object-cover"
-              />
+                aria-label="Vídeo da nossa família para sua família"
+              >
+                Seu navegador não suporta a reprodução de vídeo.
+              </video>
               
               <div className="bg-gradient-to-r from-primary to-accent text-white p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Bananas Cordeiro hoje</h3>
