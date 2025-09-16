@@ -58,13 +58,13 @@ const Historia = () => {
 
             <div className="space-y-6">
               <video 
-                src="/galeria/da_nossa_familia_pra_sua_familia_.mp4"
+                src="/galeria/midia_6.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
                 className="rounded-lg shadow-lg w-full h-[400px] object-cover"
-                aria-label="Vídeo da nossa família para sua família"
+                aria-label="Vídeo sobre nossa história"
               >
                 Seu navegador não suporta a reprodução de vídeo.
               </video>
