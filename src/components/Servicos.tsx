@@ -1,6 +1,6 @@
 import { Leaf, Package, Truck } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import facilityImage from "@/assets/facility.jpg";
+// Componente removido já que agora usaremos vídeo
 
 const Servicos = () => {
   const servicos = [
@@ -95,11 +95,17 @@ const Servicos = () => {
             </div>
 
             <div>
-              <img 
-                src={facilityImage} 
-                alt="Facilities da Bananas Cordeiro"
+              <video 
+                src="/galeria/produzindo_o_melhor_pra_sua_familia_.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="rounded-lg shadow-lg w-full h-[400px] object-cover"
-              />
+                aria-label="Vídeo produzindo o melhor para sua família"
+              >
+                Seu navegador não suporta a reprodução de vídeo.
+              </video>
             </div>
           </div>
         </div>
