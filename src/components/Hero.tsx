@@ -9,31 +9,29 @@ const Hero = () => {
     // Limpa bananas existentes
     container.innerHTML = '';
     
-    const numeroDeBananas = 20; // Número de bananas caindo
+    const numeroDeBananas = 15; // Número de bananas caindo
+    const gifBananaURL = 'https://media.tenor.com/images/73b4d4586d649ff5287f3b8a32a0c6ed/tenor.gif';
 
     for (let i = 0; i < numeroDeBananas; i++) {
-      // Cria um novo elemento div para a banana
-      const banana = document.createElement('div');
-      banana.className = 'absolute w-10 h-auto select-none z-0 animate-banana-fall';
-      
-      // Coloca a imagem SVG da banana dentro do elemento
-      banana.innerHTML = `
-        <svg viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-          <path d="M414.2 38.3c-3.3-3.2-8.5-3.1-11.7.2l-86.8 86.8c-11-4.2-22.9-6.3-35.3-6.3-73.1 0-132.5 59.4-132.5 132.5s59.4 132.5 132.5 132.5c4.1 0 8.1-.2 12.1-.6l-37 37c-3.2 3.2-3.2 8.4 0 11.6l23.5 23.5c3.2 3.2 8.4 3.2 11.6 0l37-37c28.6 15.1 61.2 23.4 95.3 23.4 20.3 0 39.6-3.1 57.5-8.8 3.5-1.1 5.9-4.3 5.9-8V49.9c0-4.8-3.7-9-8.5-9.6zM280.4 324c-39.8 0-72.1-32.3-72.1-72.1s32.3-72.1 72.1-72.1 72.1 32.3 72.1 72.1-32.3 72.1-72.1 72.1z" fill="#ffda07"/>
-        </svg>
-      `;
+      // Cria um novo elemento img para a banana GIF
+      const banana = document.createElement('img');
+      banana.className = 'absolute select-none z-0 animate-banana-gif-fall';
+      banana.src = gifBananaURL;
+      banana.alt = 'Banana Caindo';
 
       // Posição horizontal aleatória
-      banana.style.left = Math.random() * 100 + 'vw';
+      banana.style.left = Math.random() * 98 + 'vw';
 
-      // Duração da animação aleatória (entre 5 e 10 segundos)
-      banana.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      // Tamanho aleatório
+      const randomSize = Math.random() * 50 + 60;
+      banana.style.width = randomSize + 'px';
+      banana.style.height = 'auto';
 
-      // Atraso para começar a animação (entre 0 e 5 segundos)
-      banana.style.animationDelay = Math.random() * 5 + 's';
+      // Duração da animação aleatória (entre 7 e 12 segundos)
+      banana.style.animationDuration = (Math.random() * 5 + 7) + 's';
 
-      // Tamanho aleatório (entre 50% e 120% do tamanho original)
-      banana.style.transform = `scale(${Math.random() * 0.7 + 0.5})`;
+      // Atraso para começar a animação (entre 0 e 8 segundos)
+      banana.style.animationDelay = Math.random() * 8 + 's';
 
       // Adiciona a banana ao container
       container.appendChild(banana);
@@ -49,21 +47,21 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with golden gradient */}
+      {/* Background with plantation image */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          background: 'linear-gradient(160deg, #fceabb 0%, #f8b500 100%)'
+          backgroundImage: 'url(/src/assets/hero-bg.jpg)'
         }}
       />
       
       {/* Banana container for falling bananas */}
-      <div id="banana-container" className="absolute inset-0 pointer-events-none"></div>
+      <div id="banana-container" className="absolute inset-0 pointer-events-none z-20"></div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white animate-fade-in-up">
+      <div className="relative z-30 container mx-auto px-4 text-center text-white animate-fade-in-up">
         {/* Hero content with semi-transparent background */}
-        <div className="bg-black/20 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+        <div className="bg-black/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Bananas Cordeiro
           </h1>
