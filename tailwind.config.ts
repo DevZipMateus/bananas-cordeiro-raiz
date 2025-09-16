@@ -86,14 +86,17 @@ export default {
         },
         "banana-gif-fall": {
           "0%": {
-            transform: "translateY(0) rotate(0deg)",
+            transform: "translateY(0) rotate(-20deg)",
+            opacity: "0"
+          },
+          "10%": {
             opacity: "1"
           },
-          "80%": {
+          "90%": {
             opacity: "1"
           },
           "100%": {
-            transform: "translateY(110vh) rotate(720deg)",
+            transform: "translateY(115vh) rotate(720deg)",
             opacity: "0"
           }
         },

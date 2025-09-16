@@ -10,28 +10,30 @@ const Hero = () => {
     container.innerHTML = '';
     
     const numeroDeBananas = 15; // Número de bananas caindo
-    const gifBananaURL = 'https://media.tenor.com/images/73b4d4586d649ff5287f3b8a32a0c6ed/tenor.gif';
+    const gifBananaURL = 'https://c.tenor.com/73b4d4586d649ff5287f3b8a32a0c6ed/tenor.gif';
 
     for (let i = 0; i < numeroDeBananas; i++) {
       // Cria um novo elemento img para a banana GIF
       const banana = document.createElement('img');
-      banana.className = 'absolute select-none z-0 animate-banana-gif-fall';
+      banana.className = 'absolute select-none animate-banana-gif-fall';
+      banana.style.top = '-15%'; // Começa um pouco mais de cima
+      banana.style.zIndex = '2'; // Fica na frente do fundo mas atrás do conteúdo
       banana.src = gifBananaURL;
-      banana.alt = 'Banana Caindo';
+      banana.alt = 'Banana Dançante Caindo';
 
       // Posição horizontal aleatória
       banana.style.left = Math.random() * 98 + 'vw';
 
-      // Tamanho aleatório
-      const randomSize = Math.random() * 50 + 60;
+      // Tamanho aleatório (largura entre 50px e 90px)
+      const randomSize = Math.random() * 40 + 50;
       banana.style.width = randomSize + 'px';
       banana.style.height = 'auto';
 
-      // Duração da animação aleatória (entre 7 e 12 segundos)
-      banana.style.animationDuration = (Math.random() * 5 + 7) + 's';
+      // Duração da animação aleatória (entre 7 e 13 segundos)
+      banana.style.animationDuration = (Math.random() * 6 + 7) + 's';
 
-      // Atraso para começar a animação (entre 0 e 8 segundos)
-      banana.style.animationDelay = Math.random() * 8 + 's';
+      // Atraso para começar a animação (entre 0 e 10 segundos)
+      banana.style.animationDelay = Math.random() * 10 + 's';
 
       // Adiciona a banana ao container
       container.appendChild(banana);
@@ -61,7 +63,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-30 container mx-auto px-4 text-center text-white animate-fade-in-up">
         {/* Hero content with semi-transparent background */}
-        <div className="bg-black/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+        <div className="bg-black/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto border border-white/20" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Bananas Cordeiro
           </h1>
