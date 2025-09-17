@@ -9,7 +9,7 @@ const Footer = () => {
             {/* Logo e Descrição */}
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <img src="/logo.png" alt="Bananas Cordeiro" className="h-12 w-12" />
+                <img src="/logo.png" alt="Bananas Cordeiro" className="h-10 w-10" />
                 <span className="font-bold text-xl">Bananas Cordeiro</span>
               </div>
               <p className="text-white/80 mb-4">
