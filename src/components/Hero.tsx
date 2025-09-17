@@ -75,12 +75,12 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40" />
       
       {/* Banana container for falling bananas */}
-      <div ref={containerRef} className="absolute inset-0 pointer-events-none"></div>
+      <div ref={containerRef} className="absolute inset-0 pointer-events-none overflow-hidden"></div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white animate-fade-in-up">
+      <div className="relative z-10 w-full max-w-none container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white animate-fade-in-up">
         {/* Hero content with semi-transparent background */}
-        <div className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl shadow-2xl max-w-4xl mx-auto">
+        <div className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl shadow-2xl w-full max-w-4xl mx-auto">`
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-shadow-lg">
             Bananas Cordeiro
           </h1>
