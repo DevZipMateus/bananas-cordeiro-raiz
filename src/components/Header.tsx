@@ -16,11 +16,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm" style={{ backgroundColor: '#0b2d14' }}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img src="/logo.png" alt="Bananas Cordeiro" className="h-10 w-10" />
-            <span className="font-bold text-xl text-white">Bananas Cordeiro</span>
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <img src="/logo.png" alt="Bananas Cordeiro" className="h-8 w-8 sm:h-10 sm:w-10" />
+            <span className="font-bold text-base sm:text-xl text-white">Bananas Cordeiro</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -58,20 +58,21 @@ const Header = () => {
           </nav>
 
           {/* Contact Button & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <Button 
               variant="outline"
-              className="hidden sm:flex text-white border-white hover:bg-white hover:text-[#0b2d14]"
+              size="sm"
+              className="hidden sm:flex text-white border-white hover:bg-white hover:text-[#0b2d14] text-sm px-3 py-2"
               onClick={() => window.open('https://wa.me/5547999469355', '_blank')}
             >
               Fale conosco
             </Button>
             
             <button
-              className="md:hidden text-white"
+              className="md:hidden text-white p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>

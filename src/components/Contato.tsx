@@ -4,21 +4,21 @@ import { Clock, Mail, MapPin, Phone, Instagram } from "lucide-react";
 
 const Contato = () => {
   return (
-    <section id="contato" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="contato" className="py-12 sm:py-16 lg:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
               Entre em contato
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground">
               Estamos prontos para atender você da melhor forma
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Informações de Contato */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <Card>
                 <CardHeader>
                   <CardTitle className="text-xl text-primary flex items-center space-x-2">
@@ -111,39 +111,39 @@ const Contato = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="flex flex-col justify-center space-y-8">
-              <div className="bg-gradient-to-r from-primary to-accent text-white p-8 rounded-lg text-center">
-                <h3 className="text-2xl font-bold mb-4">Solicite um orçamento</h3>
-                <p className="mb-6 opacity-90">
+            <div className="flex flex-col justify-center space-y-6 sm:space-y-8 mt-8 lg:mt-0">
+              <div className="bg-gradient-to-r from-primary to-accent text-white p-6 sm:p-8 rounded-lg text-center">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Solicite um orçamento</h3>
+                <p className="text-sm sm:text-base mb-4 sm:mb-6 opacity-90 px-2">
                   Entre em contato conosco e descubra como podemos fornecer 
                   bananas de qualidade superior para seu negócio.
                 </p>
                 <Button 
                   size="lg"
                   variant="secondary"
-                  className="bg-secondary hover:bg-secondary-light text-secondary-foreground px-8 py-3"
+                  className="w-full sm:w-auto bg-secondary hover:bg-secondary-light text-secondary-foreground px-6 sm:px-8 py-3"
                   onClick={() => window.open('https://wa.me/5547999469355', '_blank')}
                 >
                   Falar com especialista
                 </Button>
               </div>
 
-              <div className="bg-muted/50 p-6 rounded-lg">
-                <h4 className="text-lg font-semibold text-primary mb-4">
+              <div className="bg-muted/50 p-4 sm:p-6 rounded-lg">
+                <h4 className="text-base sm:text-lg font-semibold text-primary mb-3 sm:mb-4">
                   Informações empresariais
                 </h4>
-                <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
                   <p><strong>Razão Social:</strong> Bananas Cordeiro LTDA</p>
                   <p><strong>CNPJ:</strong> 59.960.265/0001-84</p>
                   <p><strong>Website:</strong> www.bananascordeiro.com.br</p>
                 </div>
               </div>
 
-              <div className="text-center p-6 border-2 border-dashed border-secondary rounded-lg">
-                <h4 className="text-lg font-semibold text-primary mb-2">
+              <div className="text-center p-4 sm:p-6 border-2 border-dashed border-secondary rounded-lg">
+                <h4 className="text-base sm:text-lg font-semibold text-primary mb-2">
                   "Da Nossa Família pra sua Família"
                 </h4>
-                <p className="text-muted-foreground">
+                <p className="text-sm sm:text-base text-muted-foreground">
                   Tradição, qualidade e confiança em cada produto entregue
                 </p>
               </div>

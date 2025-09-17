@@ -22,20 +22,20 @@ const Servicos = () => {
   ];
 
   return (
-    <section id="servicos" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="servicos" className="py-12 sm:py-16 lg:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
               Nossos serviços
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Da plantação até sua mesa, oferecemos serviços completos de produção 
               e comercialização de bananas com qualidade garantida
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 lg:mb-16">
             {servicos.map((servico, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -53,16 +53,16 @@ const Servicos = () => {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-primary mb-4 sm:mb-6">
                 Produção e comercialização de bananas
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">
+                  <p className="text-sm sm:text-base text-foreground">
                     <strong>Variedades:</strong> Banana branca e caturra, selecionadas 
                     por sua qualidade superior e sabor único
                   </p>
@@ -70,7 +70,7 @@ const Servicos = () => {
                 
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">
+                  <p className="text-sm sm:text-base text-foreground">
                     <strong>Controle de qualidade:</strong> Processo rigoroso desde o 
                     plantio até a entrega, garantindo frescor e qualidade
                   </p>
@@ -78,7 +78,7 @@ const Servicos = () => {
                 
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">
+                  <p className="text-sm sm:text-base text-foreground">
                     <strong>Logística especializada:</strong> Frota própria com câmaras 
                     frias para manter a qualidade durante o transporte
                   </p>
@@ -86,7 +86,7 @@ const Servicos = () => {
                 
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">
+                  <p className="text-sm sm:text-base text-foreground">
                     <strong>Atendimento personalizado:</strong> Relacionamento próximo 
                     com clientes, oferecendo soluções sob medida
                   </p>
@@ -94,14 +94,14 @@ const Servicos = () => {
               </div>
             </div>
 
-            <div>
+            <div className="mt-8 lg:mt-0">
               <video 
                 src="/galeria/midia_6.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="rounded-lg shadow-lg w-full h-[400px] object-cover"
+                className="rounded-lg shadow-lg w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                 aria-label="Vídeo sobre nossos serviços"
               >
                 Seu navegador não suporta a reprodução de vídeo.

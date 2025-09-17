@@ -45,13 +45,13 @@ const Galeria = () => {
   ];
 
   return (
-    <section id="galeria" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section id="galeria" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
             Nossa Galeria
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Conheça nossa trajetória, nossa família e nossos parceiros através de momentos especiais
           </p>
         </div>
@@ -67,7 +67,7 @@ const Galeria = () => {
           >
             <CarouselContent>
               {images.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                       <CardContent className="p-0">
@@ -82,7 +82,7 @@ const Galeria = () => {
                             loading="lazy"
                           />
                           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <h3 className="text-white font-semibold text-lg text-center px-4">
+                            <h3 className="text-white font-semibold text-base sm:text-lg text-center px-2 sm:px-4">
                               {image.title}
                             </h3>
                           </div>
